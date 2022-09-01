@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FontAwesome.Sharp" Version="6.1.1" />
+    <PackageReference Include="System.Data.OleDb" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\icon.png" />
+	<Resource Include="Images\user.png" />
+	<Resource Include="Images\key.png" />
+	<Resource Include="Images\logo.png" />
+	<Resource Include="Images\dashboard.png" />
+	<Resource Include="Images\profile.png" />
+  </ItemGroup>
+
+</Project>

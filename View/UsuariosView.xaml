@@ -1,0 +1,141 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MoreniApp.View"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp" 
+             xmlns:viewModel="clr-namespace:MoreniApp.ViewModel" x:Class="MoreniApp.View.UsuariosView" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="120"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Top"
+                        Grid.Column="0">
+                <fa:IconImage Icon="Search" Height="20" Width="20" Foreground="{StaticResource plainTextColor3}"/>
+                <TextBox Text="Filtrar..."   
+                    FontSize="13"
+                         Height="24"
+                           Width="300"
+                           Background="Transparent"
+                             FontWeight="Medium"
+                             FontFamily="Montserrat"                            
+                             Foreground="{StaticResource plainTextColor3}"
+                             CaretBrush="{StaticResource plainTextColor3}"
+                             BorderBrush="{StaticResource plainTextColor3}"
+                             BorderThickness="0,0,0,1"                             
+                             VerticalContentAlignment="Center"
+                             Margin="5,5,0,0"/>
+            </StackPanel>
+            <Button Grid.Column="1"
+                    Command="{Binding LoginCommand}"                            
+                    Content="Nuevo"                            
+                    FontSize="12"
+                    FontFamily="Montserrat"
+                    Cursor="Hand"
+                    BorderThickness="0"
+                    Foreground="White"
+                    VerticalAlignment="Top"
+                    Margin="0,0,10,0">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="{StaticResource color8}"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Height="30"
+                                                    CornerRadius="15"
+                                                    Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                                      HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource color2}"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Grid.Column="2"
+                            Command="{Binding LoginCommand}"                            
+                            Content="Ver"                            
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            BorderThickness="0"
+                            Foreground="White"
+                    VerticalAlignment="Top">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="{StaticResource color8}"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Height="30"
+                                                    CornerRadius="15"
+                                                    Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                                      HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource color2}"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Grid>
+        <Border Grid.Row="1"
+                Background="{StaticResource ResourceKey=color9}"
+                CornerRadius="10" 
+                Padding="10">
+            <DataGrid ColumnWidth="*" 
+                  BorderThickness="0" 
+                  ItemsSource="{Binding Usuarios}" 
+                  AutoGenerateColumns="False" SelectionMode="Single">
+                <DataGrid.DataContext>
+                    <viewModel:UsuariosListViewModel/>
+                </DataGrid.DataContext>
+                <DataGrid.Background>
+                    <ImageBrush Stretch="Fill" 
+                        ImageSource="/Images/logo.png" Opacity="0.1" />
+                </DataGrid.Background>
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Foreground" Value="{StaticResource color10}"/>
+                        <Setter Property="Padding" Value="10,0,0,10"/>
+                        <Setter Property="FontFamily" Value="Montserrat"/>
+                        <Setter Property="FontSize" Value="15"/>
+                        <Setter Property="Margin" Value="10,10,0,0"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Id, Mode=OneWay}" Header="Id"/>
+                    <DataGridTextColumn Binding="{Binding Nombre, Mode=OneWay}" Header="Usuario"/>
+                    <DataGridTextColumn Binding="{Binding Rol, Mode=OneWay}" Header="Rol"/>
+                    <DataGridTextColumn Binding="{Binding Estado, Mode=OneWay}" Header="Estado"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</UserControl>

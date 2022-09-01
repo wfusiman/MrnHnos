@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoreniApp", "MoreniApp.csproj", "{A193D5B9-CFE1-40DD-9CD0-74D551442456}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A193D5B9-CFE1-40DD-9CD0-74D551442456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A193D5B9-CFE1-40DD-9CD0-74D551442456}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A193D5B9-CFE1-40DD-9CD0-74D551442456}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A193D5B9-CFE1-40DD-9CD0-74D551442456}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AB5EFCDB-0249-4FE1-A87C-BB14E6E66EAB}
+	EndGlobalSection
+EndGlobal
