@@ -1,5 +1,6 @@
 # MnHnos
-version 2
+version 2 - Microsoft Visual Studio 2019 C# WPF.
+
 
 Registro y control de servicios de mantenimiento para barcos:
 - Armadores.
